@@ -4,14 +4,14 @@ Esse sistema é resultante da avaliação de um processo seletivo de uma empresa
 
 --------------
 
-# Dependências do projeto
+## Dependências do projeto
 
 * Ruby 2.3
 * Rails 4.2.5
 * SQLite
 
 --------------
-# Como rodar?
+## Como rodar?
 
 1.Faça o clone desse projeto para sua máquina
 ```
