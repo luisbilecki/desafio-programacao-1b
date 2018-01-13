@@ -1,0 +1,28 @@
+<% unless @not_imported.blank? %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Not imported sales
+    </div>
+    <div class="panel-body">
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+          <thead>
+              <tr>
+                <th>Row</th>
+                <th>Errors</th>
+              </tr>
+          </thead>
+
+          <tbody>
+            <% @not_imported.each do |error_sale| %>
+              <tr class="danger">
+                <td><%= error_sale['row'] %></td>
+                <td><%= format_errors(error_sale['errors']) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+<% end %>
