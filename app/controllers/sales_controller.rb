@@ -11,7 +11,7 @@ class SalesController < ApplicationController
   def update
     if @sale.update(params_sale)
       redirect_to sales_path,
-        notice: "Sale was updated successfully!"
+        notice: t('messages.updated', item: Sale.model_name.human)
     else
       render :edit
     end
@@ -25,18 +25,19 @@ class SalesController < ApplicationController
 
     if @sale.save
       redirect_to sales_path,
-        notice: "Sale was inserted successfully!"
+        notice: t('messages.inserted', item: Sale.model_name.human)
     else
       render :new
     end
   end
 
-
   def destroy
     old_sale = @sale
 
     if @sale.destroy
-      redirect_to sales_path, notice: "Sale #{old_sale.description} was removed successfully!"
+      redirect_to sales_path,
+        notice: t('messages.destroyed', item: Sale.model_name.human,
+                   name: old_sale.description)
     else
       render :index
     end

@@ -1,0 +1,15 @@
+en:
+  activerecord:
+    models:
+      sale:
+        one: Sale
+        other: Sales
+    attributes:
+      sale:
+        id: Id
+        buyer: Buyer
+        description: Description
+        price: Price
+        quantity: Quantity
+        address: Address
+        supplier: Supplier

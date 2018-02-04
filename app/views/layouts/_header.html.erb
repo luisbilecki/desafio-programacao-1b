@@ -9,13 +9,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <p class="navbar-text">Luís Felipe Bilecki - Desafio de Programação 1b</p>
+            <p class="navbar-text"><%= t('app.header') %></p>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav pull-right">
-                <li><%= link_to "Home", root_path %></li>
-                <li><%= link_to "Sales", sales_path %></li>
+                <li><%= link_to t('app.home'), root_path %></li>
+                <li><%= link_to t('app.sales'), sales_path %></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

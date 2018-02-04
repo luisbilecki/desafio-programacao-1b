@@ -2,7 +2,7 @@
   <div class="col-lg-2"></div>
   <div class="col-lg-8">
     <div class="panel panel-default">
-      <div class="panel-heading">Upload a .txt File</div>
+      <div class="panel-heading"><%= t('app.upload') %></div>
       <div class="panel-body">
         <!--form-->
         <div class="row">
@@ -15,7 +15,7 @@
               </div>
               <!-- upload button -->
               <div class="col-lg-2">
-                  <%= submit_tag "Upload file", class: "btn btn-primary" %>
+                  <%= submit_tag t('buttons.upload'), class: "btn btn-primary" %>
               </div>
             <% end %>
         </div>

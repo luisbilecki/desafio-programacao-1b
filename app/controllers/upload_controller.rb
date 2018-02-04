@@ -24,7 +24,7 @@ class UploadController < ApplicationController
   private
 
   def upload_error
-    flash[:alert] = 'Please select a .txt file to upload.'
+    flash[:alert] = t('messages.upload_error')
     redirect_to root_path
   end
 end
