@@ -1,29 +1,21 @@
 class UploadController < ApplicationController
   def create
-    #Validate file
-    if params[:file].blank?
-      upload_error
-    else
-      #Parse file
-      data = File.read params[:file].path
+    return upload_error if params[:file].blank?
 
-      fparser = FileParser.new(data)
-      sales = fparser.parse_file
-      session[:sales] = sales
-      session[:amount] = fparser.amount
-      session[:not_imported] = fparser.not_imported
+    # Parse file
+    data = File.read params[:file].path
 
-      #Redirect to show
-      redirect_to upload_path
-    end
+    fparser = FileParser.new(data)
+    @sales = fparser.parse_file
+    @amount = fparser.amount
+    @not_imported = fparser.not_imported
+
+    # Render show page
+    render :show
   end
 
   def show
-    @sales = session[:sales]
-    @amount = session[:amount]
-    @not_imported = session[:not_imported]
-
-    #Check if variables are not empty
+    # Check if variables are not empty
     unless @sales && @amount && @not_imported
       upload_error
     end
@@ -32,7 +24,7 @@ class UploadController < ApplicationController
   private
 
   def upload_error
-    flash[:alert] = "Please select a .txt file to upload."
+    flash[:alert] = 'Please select a .txt file to upload.'
     redirect_to root_path
   end
 end

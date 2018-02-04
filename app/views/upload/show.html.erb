@@ -27,7 +27,7 @@
                   <tr>
                     <td><%= sale['buyer'] %></td>
                     <td><%= sale['description'] %></td>
-                    <td><%= format_curr(sale['price']) %></td>
+                    <td><%= number_to_currency(sale['price']) %></td>
                     <td><%= sale['quantity'] %></td>
                     <td><%= sale['address'] %></td>
                     <td><%= sale['supplier'] %></td>
