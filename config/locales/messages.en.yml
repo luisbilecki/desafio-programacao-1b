@@ -9,3 +9,4 @@ en:
     updated: "%{item} was updated successfully!"
     inserted: "%{item} was inserted successfully!"
     destroyed: "%{item} %{name} was removed successfully!"
+    not_imported: "Not imported %{item}"
